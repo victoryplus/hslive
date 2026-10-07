@@ -203,21 +203,25 @@
   }
 
   .player-poster {
-    position: absolute;
-    inset: 0;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    /* ============================================================ */
-    /* REPLACE WITH YOUR LOCAL POSTER IMAGE                         */
-    /* Example: url('poster.jpg') or url('images/poster.png')      */
-    /* ============================================================ */
-    background-image: url('hsi.jpg'),
-                      linear-gradient(135deg, #1a472a 0%, #0d2818 100%);
-    background-blend-mode: overlay;
-    transition: opacity 0.4s;
-    z-index: 2;
-  }
+  position: absolute;
+  inset: 0;
+  background-image: url('hsi.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #000;
+  transition: opacity 0.4s;
+  z-index: 2;
+}
+
+/* Tambahan overlay gelap halus supaya tombol play tetap terlihat */
+.player-poster::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.25);
+  pointer-events: none;
+}
 
   .player-video {
     position: absolute;
